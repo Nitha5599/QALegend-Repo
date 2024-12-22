@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+  <test thread-count="7" name="Test">
+    <classes>
+      <!-- <class name="TestScript.QALegendEventTest"/>
+      <class name="TestScript.QALegendNoteTest"/>
+      <class name="TestScript.QALegendEditNoteTest"/> -->
+      <!-- <class name="TestScript.QALegendAddClientsTest"/> 
+      <class name="TestScript.QALegendTeamMembersTest"/> 
+      <class name="TestScript.QALegendItemsTest"/> 
+      <class name="TestScript.QALegendEditItemsTest"/>
+      <class name="TestScript.QALegendMessagesTest"/> -->
+      <class name="TestScript.QALegendAllProjectsTest"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
