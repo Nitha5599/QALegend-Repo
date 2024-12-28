@@ -55,6 +55,10 @@ public class PageUtilities {
 		action.sendKeys(Keys.ESCAPE);
 		action.build().perform();
 	}
+	public void pressEnterKeyUsingActions() {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ENTER).perform();
+    }
 	
 	public void rightClick() {
 		Actions action = new Actions(driver);
