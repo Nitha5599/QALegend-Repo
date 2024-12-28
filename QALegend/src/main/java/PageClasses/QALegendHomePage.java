@@ -26,6 +26,8 @@ public class QALegendHomePage {
 	WebElement homepageProjectsDropDownButton;
 	@FindBy(xpath = "//span[text()='All Projects']")
 	WebElement homepageAllProjectsButton;
+	@FindBy(xpath = "//span[text()='Tasks']")
+	WebElement homepageTasksButton;
 	
 	
 	
@@ -74,6 +76,10 @@ public class QALegendHomePage {
 	
 	public void clickOnHomePageAllProjectsButton() {
 		homepageAllProjectsButton.click();
+	}
+	
+	public void clickOnHomePageTasksButton() {
+		homepageTasksButton.click();
 	}
 
 }

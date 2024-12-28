@@ -121,5 +121,9 @@ public class PageUtilities {
 		driver.navigate().forward();
 	}
 	
+	public void pressEnterKey(WebElement element) {
+        element.sendKeys(Keys.ENTER);
+    }
+	
 
 }

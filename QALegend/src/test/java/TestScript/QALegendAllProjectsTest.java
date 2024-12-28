@@ -18,11 +18,11 @@ public class QALegendAllProjectsTest extends BaseClass{
 		String projectTitle = ExcelUtility.getStringData(1, 0, "AllProjects");
 		projectpage.addProjectTitle(projectTitle);
 		String projectClientValue = ExcelUtility.getStringData(1, 1, "AllProjects");
-		projectpage.addClientDropDown(projectClientValue);
+		//projectpage.addClientDropDown(projectClientValue);
 		
 		String projectDesription = ExcelUtility.getStringData(1, 2, "AllProjects");
-		//String projectPrice = ExcelUtility.getNumericData(1, 2, "AllProjects");
-		projectpage.addDesc(projectDesription);
+		String projectPrice = ExcelUtility.getStringData(1, 2, "AllProjects");
+		projectpage.addDesc(projectDesription, projectPrice);
 		projectpage.saveButtonClick();
 	}
 

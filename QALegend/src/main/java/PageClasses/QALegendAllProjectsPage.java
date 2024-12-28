@@ -58,27 +58,26 @@ public class QALegendAllProjectsPage {
 	public void addProjectTitle(String title) {
 		pageutilities.enterText(titleTextBox, title);
 	}
-	public void addClientDropDown(String dropdownValue) {
-		pageutilities.clickOnElement(clientDropDown);
-		pageutilities.clickOnElement(selectValueDropDown);
-		//WaitUtility.waitForVisibilityOfElement(driver, selectValueDropDown);
-		for (int i = 0; i < 20; i++) {
-			selectValueDropDown.sendKeys(Keys.ARROW_DOWN);
-			if(pageutilities.readAttribute(selectValueDropDown,dropdownValue).equals(dropdownValue)) {
-           // if (selectValueDropDown.getAttribute("AAA").equals(dropdownValue)) {
-            	selectValueDropDown.sendKeys(Keys.ENTER);
-                break;
-            }
-        }
+	/*
+	 * public void addClientDropDown(String dropdownValue) {
+	 * pageutilities.clickOnElement(clientDropDown);
+	 * pageutilities.clickOnElement(selectValueDropDown);
+	 * //WaitUtility.waitForVisibilityOfElement(driver, selectValueDropDown); for
+	 * (int i = 0; i < 20; i++) { selectValueDropDown.sendKeys(Keys.ARROW_DOWN);
+	 * if(pageutilities.readAttribute(selectValueDropDown,dropdownValue).equals(
+	 * dropdownValue)) { // if
+	 * (selectValueDropDown.getAttribute("AAA").equals(dropdownValue)) {
+	 * selectValueDropDown.sendKeys(Keys.ENTER); break; } }
+	 * 
+	 * }
+	 */
 		
-	}
-		
-	public void addDesc(String description) {
+	public void addDesc(String description, String price) {
 		WaitUtility.waitForClickingElement(driver, descTextBox);
 		pageutilities.enterText(descTextBox, description);
 		startDateBox.sendKeys("2024-12-18");
 		deadlineBox.sendKeys("2025-01-03");	
-		//pageutilities.enterText(priceTextBox, price);
+		pageutilities.enterText(priceTextBox, price);
 	}
 		
 	

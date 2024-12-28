@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestScript.QALegendAllProjectsTest">
+      <class name="TestScript.QALegendTasksTest">
         <methods>
-          <include name="addAllProjectsTestcase"/>
           <include name="browserInitialization"/>
           <include name="afterMethod"/>
+          <include name="addTasksTestcase"/>
         </methods>
-      </class> <!-- TestScript.QALegendAllProjectsTest -->
+      </class> <!-- TestScript.QALegendTasksTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

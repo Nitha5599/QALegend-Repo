@@ -3,16 +3,16 @@
 <suite name="Suite">
   <test thread-count="7" name="Test">
     <classes>
-      <!-- <class name="TestScript.QALegendEventTest"/>
-      <class name="TestScript.QALegendNoteTest"/>
-      <class name="TestScript.QALegendEditNoteTest"/> -->
+      <class name="TestScript.QALegendEventTest"/> 
+    <!--   <class name="TestScript.QALegendNoteTest"/> -->
+      <!-- <class name="TestScript.QALegendEditNoteTest"/>  -->
       <!-- <class name="TestScript.QALegendAddClientsTest"/> 
       <class name="TestScript.QALegendTeamMembersTest"/> 
       <class name="TestScript.QALegendItemsTest"/> 
-      <class name="TestScript.QALegendEditItemsTest"/>
+      <class name="TestScript.QALegendEditItemsTest"/> 
       <class name="TestScript.QALegendMessagesTest"/> -->
-      <class name="TestScript.QALegendAllProjectsTest"/>
-      
+   <!--   <class name="TestScript.QALegendAllProjectsTest"/> -->
+       <class name="TestScript.QALegendTasksTest"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

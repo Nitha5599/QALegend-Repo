@@ -26,6 +26,7 @@ import PageClasses.QALegendItemsPage;
 import PageClasses.QALegendLoginPage;
 import PageClasses.QALegendMessagesPage;
 import PageClasses.QALegendNotesPage;
+import PageClasses.QALegendTasksPage;
 import PageClasses.QALegendTeamMembersPage;
 import Utilities.ScreenshotUtility;
 
@@ -42,6 +43,7 @@ public class BaseClass {
 	QALegendEditItemsPage edititempage;
 	QALegendMessagesPage messagepage;
 	QALegendAllProjectsPage projectpage;
+	QALegendTasksPage taskspage;
 	public Properties prop;
 	public FileInputStream fis;
 	
@@ -77,6 +79,7 @@ public class BaseClass {
 		edititempage = new QALegendEditItemsPage(driver);
 		messagepage = new QALegendMessagesPage(driver);
 		projectpage = new QALegendAllProjectsPage(driver);
+		taskspage = new QALegendTasksPage(driver);
 	}
 	
 	@AfterMethod
@@ -86,7 +89,7 @@ public class BaseClass {
 			sc.captureFailureScreenshot(driver, itResult.getName());
 		}
 		if(driver!=null) {
-			driver.quit();
+			//driver.quit();
 		}
 	}
 
