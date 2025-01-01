@@ -1,5 +1,6 @@
 package TestScript;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.awt.AWTException;
@@ -20,7 +21,8 @@ public class QALegendEditNoteTest extends BaseClass{
 		editnotepage.searchNote(searchTitle);
 		editnotepage.editNoteClick();
 		editnotepage.editNote(editTitle, editDesription, path);
-		
+		Assert.assertEquals(editnotepage.editNoteSaveButtonStatusChecker(), true);
+		editnotepage.saveClick();
 		
 	}
 

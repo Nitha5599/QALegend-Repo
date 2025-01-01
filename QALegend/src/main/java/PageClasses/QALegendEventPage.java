@@ -40,17 +40,7 @@ public class QALegendEventPage {
 	WebElement saveButton;
 	@FindBy(xpath = "(//button[@class='close'])[1]")
 	WebElement closeButton;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	public QALegendEventPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -58,15 +48,6 @@ public class QALegendEventPage {
 		this.pageutilities = new PageUtilities(driver);
 		PageFactory.initElements(driver, this);
 	}
-
-
-
-
-
-
-
-
-
 
 
 	public void clickOnAddEventButton() {
@@ -85,8 +66,4 @@ public class QALegendEventPage {
 		return (pageutilities.isElementEnabled(saveButton));
 		
 	}
-	public void closeButtonClick() {
-		closeButton.click();
-	}
-
 }

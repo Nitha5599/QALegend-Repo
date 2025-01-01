@@ -2,6 +2,7 @@ package TestScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.ExcelUtility;
@@ -22,6 +23,7 @@ public class QALegendEditItemsTest extends BaseClass{
 		
 		edititempage.editItemClick();
 		edititempage.editItem(editTitle, editDesription, editUnitType, editRate);
+		Assert.assertEquals(edititempage.editSaveButtonStatusChecker(), true);
 		edititempage.editsaveButtonClick();
 		
 	}

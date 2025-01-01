@@ -37,12 +37,6 @@ public class QALegendAllProjectsPage {
 	WebElement saveButton;
 	
 	
-	
-	
-	
-	
-	
-	
 	public QALegendAllProjectsPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -79,9 +73,10 @@ public class QALegendAllProjectsPage {
 		deadlineBox.sendKeys("2025-01-03");	
 		pageutilities.enterText(priceTextBox, price);
 	}
-		
-	
-	
+	public boolean addProjectsSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(saveButton));
+		  
+	}
 	public void saveButtonClick() {
 		saveButton.click();
 	}

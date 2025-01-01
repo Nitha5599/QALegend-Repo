@@ -1,5 +1,6 @@
 package TestScript;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.awt.AWTException;
 import java.io.IOException;
@@ -17,6 +18,7 @@ public class QALegendNoteTest extends BaseClass{
 		String path = System.getProperty("user.dir")+prop.getProperty("uploadfilepath");
 		System.out.println(path);
 		notespage.addNotes(notesTitle, notesDesription, path);
+		Assert.assertEquals(notespage.addNoteSaveButtonStatusChecker(), true);
 		notespage.saveButtonClick();
 	}
 }

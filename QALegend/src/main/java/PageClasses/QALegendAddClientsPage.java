@@ -6,13 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
+import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 
 public class QALegendAddClientsPage {
 	public WebDriver driver;
 	public PageUtilities pageutilities;
 	@FindBy(xpath = "//a[@class='btn btn-default']")
 	WebElement addClientButton;
-	@FindBy(name = "company_name")
+	@FindBy(id = "company_name")
 	WebElement companyNameTextBox;
 	@FindBy(id = "address")
 	WebElement addressTextBox;
@@ -24,13 +26,9 @@ public class QALegendAddClientsPage {
 	WebElement zipTextBox;
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement saveButton;
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(id = "//input[@type='search']")
+	WebElement searchBox;
+		
 	public QALegendAddClientsPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -42,18 +40,22 @@ public class QALegendAddClientsPage {
 		pageutilities.clickOnElement(addClientButton);
 	}
 	
-	public void addClientDetails(String cmpy_name, String addrs, String city, String state, String zip) throws InterruptedException {
-		//Thread.sleep(2000);
-		//companyNameTextBox.sendKeys(cmpy_name);
-		//pageutilities.enterText(companyNameTextBox, cmpy_name);
+	public QALegendAddClientsPage addClientDetails(String cmpy_name, String addrs, String city, String state, String zip) throws InterruptedException {
+		companyNameTextBox.sendKeys(cmpy_name);
+		pageutilities.enterText(companyNameTextBox, cmpy_name);
 		pageutilities.enterText(addressTextBox, addrs);
 		pageutilities.enterText(cityTextBox, city);
 		pageutilities.enterText(stateTextBox, state);
 		pageutilities.enterText(zipTextBox, zip);
+		return this;
+		
+	}
+	public boolean addClientSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(saveButton));	  
 	}
 	
-	public void addClientSaveButton() {
+	public QALegendAddClientsPage addClientSaveButton() {
 		saveButton.click();
+		return this;
 	}
-
 }

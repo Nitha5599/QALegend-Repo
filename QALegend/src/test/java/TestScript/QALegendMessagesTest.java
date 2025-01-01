@@ -9,7 +9,7 @@ import Utilities.FakerUtility;
 
 public class QALegendMessagesTest extends BaseClass{
 	
-	@Test
+	@Test(groups = {"Regression"})
 	public void sendMessageTestcases() throws IOException, InterruptedException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageMessagesButton();

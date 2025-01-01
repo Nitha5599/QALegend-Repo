@@ -40,12 +40,7 @@ public class QALegendTeamMembersPage {
 	WebElement roleDropDown;
 	@FindBy(id = "form-submit")
 	WebElement formSubmitButton;
-	
-	
-	
-	
-	
-	
+
 	
 	
 	public QALegendTeamMembersPage(WebDriver driver) {
@@ -80,6 +75,10 @@ public class QALegendTeamMembersPage {
 		pageutilities.enterText(emailTextbox, email);
 		pageutilities.enterText(passwordTextbox, password);
 		pageutilities.selectByIndex(roleDropDown, 2);
+	}
+	public boolean addTeamMemberSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(formSubmitButton));
+	  
 	}
 	
 	public void clickOnsubmitButton() {

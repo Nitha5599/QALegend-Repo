@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QALegendEditNotePage {
 	public WebDriver driver;
@@ -29,13 +30,7 @@ public class QALegendEditNotePage {
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement saveButton;
 	
-	
-	
-	
-	
-	
-	
-	
+
 	public QALegendEditNotePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -59,7 +54,7 @@ public class QALegendEditNotePage {
 		pageutilities.clickOnElement(uploadButton);
 		fileUpload(path);
 		Thread.sleep(4000);
-		saveButton.click();
+		
 	}
 	public void fileUpload(String path) throws AWTException, InterruptedException {
 		StringSelection stringselection = new StringSelection(path);
@@ -73,6 +68,13 @@ public class QALegendEditNotePage {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		
+	}
+	public boolean editNoteSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(saveButton));
+		  
+	}
+	public void saveClick() {
+		saveButton.click();
 	}
 
 }

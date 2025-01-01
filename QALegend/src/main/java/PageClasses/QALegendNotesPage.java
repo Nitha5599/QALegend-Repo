@@ -28,9 +28,7 @@ public class QALegendNotesPage {
 	WebElement uploadButton;
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement saveButton;
-	
-	
-		
+			
 		
 	public QALegendNotesPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -40,13 +38,12 @@ public class QALegendNotesPage {
 	}
 
 
-
-
 	public void addNotes(String title, String desc, String path) throws AWTException, InterruptedException {
 		pageutilities.clickOnElement(addNoteButton);
 		pageutilities.enterText(titleTextBox, title);
 		pageutilities.enterText(descTextBox, desc);
 		pageutilities.clickOnElement(uploadButton);
+		WaitUtility.waitForClickingElement(driver, uploadButton);
 		fileUpload(path);
 		
 	}
@@ -64,9 +61,14 @@ public class QALegendNotesPage {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		
 	}
+	public boolean addNoteSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(saveButton));
+	  
+	}
 	public void saveButtonClick() throws InterruptedException {
-		Thread.sleep(4000);
 		//WaitUtility.waitForClickingElement(driver, saveButton);
-		pageutilities.clickOnElement(saveButton);
+		pageutilities.scroll();
+		WaitUtility.waitForClickingElement(driver, saveButton);
+		pageutilities.clickOnElement(saveButton);	
 	}
 }

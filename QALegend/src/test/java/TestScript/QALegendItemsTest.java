@@ -2,6 +2,7 @@ package TestScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.ExcelUtility;
@@ -19,6 +20,7 @@ public class QALegendItemsTest extends BaseClass{
 		String itemUnitType = ExcelUtility.getStringData(1, 2, "Items");
 		String itemRate = ExcelUtility.getNumericData(1, 3, "Items");
 		itempage.addItem(itemTitle, itemDesription, itemUnitType, itemRate);
+		Assert.assertEquals(itempage.addItemSaveButtonStatusChecker(), true);
 		itempage.saveButtonClick();
 	}
 

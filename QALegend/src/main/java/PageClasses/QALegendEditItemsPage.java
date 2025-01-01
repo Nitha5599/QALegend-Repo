@@ -25,11 +25,6 @@ public class QALegendEditItemsPage {
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement editSaveButton;
 	
-	
-	
-	
-	
-	
 	public QALegendEditItemsPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -53,6 +48,9 @@ public class QALegendEditItemsPage {
 		pageutilities.enterText(editUnitTypeTextbox, edit_unittype);
 		pageutilities.clearTextBox(editRateTextbox);
 		pageutilities.enterText(editRateTextbox, edit_rate);
+	}
+	public boolean editSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(editSaveButton));  
 	}
 	public void editsaveButtonClick() {
 		pageutilities.clickOnElement(editSaveButton);

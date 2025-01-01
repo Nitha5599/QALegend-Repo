@@ -1,6 +1,8 @@
 package TestScript;
 
 import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import Utilities.ExcelUtility;
 import Utilities.FakerUtility;
@@ -23,6 +25,7 @@ public class QALegendTeamMembersTest extends BaseClass{
 		String team_member_email = ExcelUtility.getStringData(1, 5, "Sheet5");
 		String team_member_password = ExcelUtility.getStringData(1, 6, "Sheet5");
 		teammemberpage.addMemberdetails_AccountSettings(team_member_email, team_member_password);
+		Assert.assertEquals(teammemberpage.addTeamMemberSaveButtonStatusChecker(), true);
 		teammemberpage.clickOnsubmitButton();
 	}
 

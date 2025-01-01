@@ -12,7 +12,7 @@ import Utilities.FakerUtility;
 
 public class QALegendEventTest extends BaseClass{
 	
-	@Test
+	@Test(groups = {"smoke"})
 	public void addEventTestcase() throws IOException {
 		
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
@@ -22,8 +22,8 @@ public class QALegendEventTest extends BaseClass{
 		String eventDesription = ExcelUtility.getStringData(1, 1, "Sheet1");
 		
 		eventpage.addEvent(eventTitle, eventDesription);
-		AssertJUnit.assertEquals(eventpage.eventPageSaveButtonStatusChecker(), true);
-		eventpage.closeButtonClick();
+		Assert.assertEquals(eventpage.eventPageSaveButtonStatusChecker(), true);
+		
 	}
 
 }

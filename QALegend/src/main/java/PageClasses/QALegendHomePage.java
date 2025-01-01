@@ -29,11 +29,7 @@ public class QALegendHomePage {
 	@FindBy(xpath = "//span[text()='Tasks']")
 	WebElement homepageTasksButton;
 	
-	
-	
-	
-	
-	
+
 	public QALegendHomePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -42,44 +38,49 @@ public class QALegendHomePage {
 	}
 
 
-
-
-
-
-	public void clickOnHomePageEventButton() {
+	public QALegendHomePage clickOnHomePageEventButton() {
 		homepageEventButton.click();
+		return this;
 	}
 	
-	public void clickOnHomepageNotesButton() {
+	public QALegendHomePage clickOnHomepageNotesButton() {
 		homepageNotesButton.click();
+		return this;
 	}
 	
-	public void clickOnHomepageClientsButton() {
+	public QALegendHomePage clickOnHomepageClientsButton() {
 		homepageClientsButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageTeamMembersButton() {
+	public QALegendHomePage clickOnHomePageTeamMembersButton() {
 		homepageTeamMembersButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageItemsButton() {
+	public QALegendHomePage clickOnHomePageItemsButton() {
 		homepageItemsButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageMessagesButton() {
+	public QALegendHomePage clickOnHomePageMessagesButton() {
 		homepageMessagesButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageProjectsDropDownButton() {
+	public QALegendHomePage clickOnHomePageProjectsDropDownButton() {
 		homepageProjectsDropDownButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageAllProjectsButton() {
+	public QALegendHomePage clickOnHomePageAllProjectsButton() {
 		homepageAllProjectsButton.click();
+		return this;
 	}
 	
-	public void clickOnHomePageTasksButton() {
+	public QALegendHomePage clickOnHomePageTasksButton() {
 		homepageTasksButton.click();
+		return this;
 	}
 
 }

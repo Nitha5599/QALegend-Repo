@@ -47,7 +47,7 @@ public class BaseClass {
 	public Properties prop;
 	public FileInputStream fis;
 	
-	@BeforeMethod(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true, groups = {"smoke","Sanity","Regression"})
 	@Parameters({"browser"})
 	public void browserInitialization(@Optional("chrome") String browserName) throws Exception {
 		if(browserName.equalsIgnoreCase("Chrome")) {

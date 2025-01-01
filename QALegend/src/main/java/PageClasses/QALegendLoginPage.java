@@ -16,7 +16,8 @@ public class QALegendLoginPage {
 	WebElement passwordfield;
 	@FindBy(xpath = "//button[text()='Sign in']")
 	WebElement signInButton;
-	
+	@FindBy(xpath = "")
+	WebElement authenticationFailed;
 	
 	
 	
@@ -28,16 +29,14 @@ public class QALegendLoginPage {
 		PageFactory.initElements(driver, this);
 		
 	}
-	
-
-
-
-
 
 	public void login(String userName, String password) {
 		pageutilities.enterText(usernamefield, userName);
 		pageutilities.enterText(passwordfield, password);
 		pageutilities.clickOnElement(signInButton);
+	}
+	public boolean checkForInvalidLogin() {
+		return pageutilities.isElementDisplayed(authenticationFailed);
 	}
 
 }

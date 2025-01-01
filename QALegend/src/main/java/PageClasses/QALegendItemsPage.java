@@ -24,12 +24,6 @@ public class QALegendItemsPage {
 	WebElement saveButton;
 	
 	
-	
-	
-	
-	
-	
-	
 	public QALegendItemsPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
@@ -44,6 +38,10 @@ public class QALegendItemsPage {
 		pageutilities.enterText(addDescTextbox, desc);
 		pageutilities.enterText(unitTypeTextbox, unittype);
 		pageutilities.enterText(rateTextbox, rate);
+	}
+	public boolean addItemSaveButtonStatusChecker() {
+		return(pageutilities.isElementEnabled(saveButton));
+	  
 	}
 	public void saveButtonClick() {
 		pageutilities.clickOnElement(saveButton);
