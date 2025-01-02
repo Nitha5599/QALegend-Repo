@@ -9,7 +9,7 @@ import Utilities.ExcelUtility;
 
 public class QALegendEditItemsTest extends BaseClass{
 	
-	@Test
+	@Test(retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void editItemTestcases() throws IOException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageItemsButton();

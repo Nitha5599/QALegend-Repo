@@ -55,15 +55,22 @@ public class QALegendEventPage {
 		
 	}
 	
-	public void addEvent(String title, String description) {
+	public void addEvent(String title, String description, String startdate, String enddate) {
 		titleTextBox.sendKeys(title);
 		pageutilities.enterText(descriptionBox, description);
-		startDateBox.sendKeys("2024-12-30");
-		endDateBox.sendKeys("2025-01-28");		
+		pageutilities.clickOnElement(startDateBox);
+		pageutilities.enterText(startDateBox, startdate);
+		pageutilities.pressEnterKeyUsingActions();
+		pageutilities.clickOnElement(endDateBox);
+		pageutilities.enterText(endDateBox, enddate);
+		pageutilities.pressEnterKeyUsingActions();		
 	}
 	
 	public boolean eventPageSaveButtonStatusChecker() {
 		return (pageutilities.isElementEnabled(saveButton));
 		
+	}
+	public void saveButtonClick() {
+		pageutilities.clickOnElement(saveButton);
 	}
 }

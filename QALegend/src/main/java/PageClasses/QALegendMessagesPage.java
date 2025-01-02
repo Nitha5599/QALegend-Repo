@@ -33,21 +33,13 @@ public class QALegendMessagesPage {
 	@FindBy (xpath = ("//p[@class='pt5 pb10 b-b']//following::p"))
 	WebElement emailmessage;
 	
-	
-	
-	
-	
-	
+
 	public QALegendMessagesPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		this.pageutilities = new PageUtilities(driver);
 		PageFactory.initElements(driver, this);
-	}
-
-	
-	
-	
+	}	
 	
 	public void addMessage(String mailid,String subject,String msg) throws InterruptedException {
 		pageutilities.clickOnElement(composemail);

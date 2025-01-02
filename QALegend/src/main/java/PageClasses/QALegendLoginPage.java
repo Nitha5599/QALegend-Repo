@@ -35,8 +35,5 @@ public class QALegendLoginPage {
 		pageutilities.enterText(passwordfield, password);
 		pageutilities.clickOnElement(signInButton);
 	}
-	public boolean checkForInvalidLogin() {
-		return pageutilities.isElementDisplayed(authenticationFailed);
-	}
 
 }

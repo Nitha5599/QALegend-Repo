@@ -11,7 +11,7 @@ import Utilities.FakerUtility;
 
 public class QALegendAddClientsTest extends BaseClass {
 	
-	@Test(groups = {"smoke"})
+	@Test(groups = {"smoke"},retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void addClientsTestcases() throws IOException, InterruptedException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomepageClientsButton();

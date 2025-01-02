@@ -10,7 +10,7 @@ import Utilities.WaitUtility;
 
 public class QALegendTeamMembersTest extends BaseClass{
 	
-	@Test
+	@Test(retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void addTeamMemberTestcases() throws IOException, InterruptedException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageTeamMembersButton();

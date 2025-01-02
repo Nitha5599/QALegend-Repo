@@ -1,11 +1,9 @@
 package PageClasses;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.PageUtilities;
 import Utilities.WaitUtility;
 
@@ -17,18 +15,17 @@ public class QALegendAllProjectsPage {
 	@FindBy(id = "title")
 	WebElement titleTextBox;
 	@FindBy(xpath = "(//span[@class='select2-chosen'])[3]")
-	WebElement clientDropDown;
-	@FindBy(xpath = "(//input[@class='select2-input'])[3]")
-	WebElement client2DropDown;
+	WebElement clientBox;
+	@FindBy(xpath = "(//input[@class='select2-input'])[4]")
+	WebElement clientSearchBox;
 	@FindBy(xpath = "(//div[@class='select2-result-label'])[8]")
-	WebElement selectValueDropDown;
-	
+	WebElement selectValueDropDown;	
 	@FindBy(id = "description")
 	WebElement descTextBox;
 	@FindBy(id = "start_date")
 	WebElement startDateBox;
 	@FindBy(id = "deadline")
-	WebElement deadlineBox;
+	WebElement endDateBox;
 	@FindBy(id = "price")
 	WebElement priceTextBox;
 	@FindBy(xpath = "//input[@class='select2-input select2-default']")
@@ -51,6 +48,12 @@ public class QALegendAllProjectsPage {
 	
 	public void addProjectTitle(String title) {
 		pageutilities.enterText(titleTextBox, title);
+		
+	}
+	public void addProjectClient(String client) {
+		pageutilities.clickOnElement(clientBox);
+		pageutilities.enterText(clientSearchBox, client);
+		pageutilities.pressEnterKeyUsingActions();
 	}
 	/*
 	 * public void addClientDropDown(String dropdownValue) {
@@ -66,11 +69,15 @@ public class QALegendAllProjectsPage {
 	 * }
 	 */
 		
-	public void addDesc(String description, String price) {
+	public void addDesc(String description, String price, String startdate, String enddate) {
 		WaitUtility.waitForClickingElement(driver, descTextBox);
 		pageutilities.enterText(descTextBox, description);
-		startDateBox.sendKeys("2024-12-18");
-		deadlineBox.sendKeys("2025-01-03");	
+		pageutilities.clickOnElement(startDateBox);
+		pageutilities.enterText(startDateBox, startdate);
+		pageutilities.pressEnterKeyUsingActions();
+		pageutilities.clickOnElement(endDateBox);
+		pageutilities.enterText(endDateBox, enddate);
+		pageutilities.pressEnterKeyUsingActions();
 		pageutilities.enterText(priceTextBox, price);
 	}
 	public boolean addProjectsSaveButtonStatusChecker() {

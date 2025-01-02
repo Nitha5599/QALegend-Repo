@@ -12,7 +12,7 @@ import Utilities.FakerUtility;
 
 public class QALegendEventTest extends BaseClass{
 	
-	@Test(groups = {"smoke"})
+	@Test(groups = {"smoke"},retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void addEventTestcase() throws IOException {
 		
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
@@ -20,10 +20,11 @@ public class QALegendEventTest extends BaseClass{
 		eventpage.clickOnAddEventButton();
 		String eventTitle = ExcelUtility.getStringData(1, 0, "Sheet1")+ FakerUtility.randomNumberGenerator();
 		String eventDesription = ExcelUtility.getStringData(1, 1, "Sheet1");
-		
-		eventpage.addEvent(eventTitle, eventDesription);
+		String eventStartDate = "2024-12-30";
+		String eventEndDate = "2025-01-28";
+		eventpage.addEvent(eventTitle, eventDesription, eventStartDate, eventEndDate);
 		Assert.assertEquals(eventpage.eventPageSaveButtonStatusChecker(), true);
-		
+		eventpage.saveButtonClick();
 	}
 
 }

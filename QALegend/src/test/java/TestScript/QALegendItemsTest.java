@@ -10,7 +10,7 @@ import Utilities.FakerUtility;
 
 public class QALegendItemsTest extends BaseClass{
 	
-	@Test
+	@Test(retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void addEventTestcases() throws IOException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomePageItemsButton();

@@ -66,7 +66,6 @@ public class QALegendNotesPage {
 	  
 	}
 	public void saveButtonClick() throws InterruptedException {
-		//WaitUtility.waitForClickingElement(driver, saveButton);
 		pageutilities.scroll();
 		WaitUtility.waitForClickingElement(driver, saveButton);
 		pageutilities.clickOnElement(saveButton);	

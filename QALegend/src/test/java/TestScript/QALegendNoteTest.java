@@ -9,7 +9,7 @@ import Utilities.FakerUtility;
 
 public class QALegendNoteTest extends BaseClass{
 	
-	@Test
+	@Test(retryAnalyzer = TestScript.RetryAnalyser.class)
 	public void addNotesTestcases() throws IOException, AWTException, InterruptedException {
 		loginpage.login(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.clickOnHomepageNotesButton();

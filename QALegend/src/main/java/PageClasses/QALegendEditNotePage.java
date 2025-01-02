@@ -53,7 +53,7 @@ public class QALegendEditNotePage {
 		pageutilities.enterText(editDescTextBox, desc);
 		pageutilities.clickOnElement(uploadButton);
 		fileUpload(path);
-		Thread.sleep(4000);
+		
 		
 	}
 	public void fileUpload(String path) throws AWTException, InterruptedException {
@@ -74,6 +74,8 @@ public class QALegendEditNotePage {
 		  
 	}
 	public void saveClick() {
+		pageutilities.scroll();
+		WaitUtility.waitForClickingElement(driver, saveButton);
 		saveButton.click();
 	}
 
